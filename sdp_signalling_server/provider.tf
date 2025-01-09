@@ -3,15 +3,15 @@ terraform {
 
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "~> 5.75.0"
     }
   }
 
   backend "s3" {
-    bucket = "terraform-remote-state-wkm-projects"
-    key    = "webrtc-media-server/coturn-server/state.tfstate"
-    region = "us-east-2"
+    bucket         = "terraform-remote-state-wkm-projects"
+    key            = "webrtc-media-server/sdp_signalling_server/state.tfstate"
+    region         = "us-east-2"
     dynamodb_table = "terraform-remote-state-locks"
     encrypt        = true
   }
@@ -26,8 +26,8 @@ provider "aws" {
   }
 
   default_tags {
-     tags = {
-        TfWorkingDir = path.cwd
-     }
+    tags = {
+      TfWorkingDir = path.cwd
+    }
   }
 }

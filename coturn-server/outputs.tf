@@ -1,3 +1,3 @@
 output "nlb_url" {
-  value = aws_lb.coturn-ingress.dns_name
+  value = aws_lb.coturn_ingress_nlb.dns_name
 }
